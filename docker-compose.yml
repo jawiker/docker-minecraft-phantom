@@ -1,0 +1,29 @@
+version: '3.4'
+
+services:
+  minecraft-phantom:
+    image: ablauvelt93/minecraft-phantom:latest
+    container_name: minecraft-phantom
+    environment:
+
+      #Mincraft Phantom Version
+      VERSION: 0.5.3
+
+      #Architecture Type options: linux,linux-arm5 -> linux-arm8
+      TYPE: linux-arm8
+
+      #Server information (uncomment variables as needed)
+      SERVER: [Server IP or Hostname]:[Port number Default(19132)]
+      #BIND_PORT: 0
+      #BIND_IP: 0.0.0.0
+      #TIMEOUT: 60
+      #IPV6: 1
+      #DEBUG: 1
+      #REMOVE_PORTS: 1
+      #THREADS: 16
+
+    #Required for Phantom to work.
+    network_mode: host
+
+    #optional
+    restart: always
